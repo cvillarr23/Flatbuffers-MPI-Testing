@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+<<<<<<< HEAD
 
 CMakeLists.txt.user
 CMakeCache.txt
@@ -42,3 +43,5 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+=======
+>>>>>>> dbb860d9d4cfa74bae1b349dd78eba1a963e7c76
