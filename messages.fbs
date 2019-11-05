@@ -1,0 +1,30 @@
+namespace MessageTest;
+
+union Type {Vector, VehiclePosition, Update}
+
+table Messages {
+  messages:[Message];
+  time:Message;
+}
+
+table Message {
+  message:Type;
+  id:string;
+}
+
+table Vector {
+  x:double;
+  y:double;
+  z:double;
+}
+
+table VehiclePosition {
+  rank:int;
+  position:Vector;
+
+}
+
+table Update {
+  rank:int;
+  posUpdate:VehiclePosition;
+}
