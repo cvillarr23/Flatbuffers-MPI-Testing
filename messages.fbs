@@ -1,15 +1,25 @@
-namespace MessageTest;
 
-union Type {Vector, VehiclePosition, Update}
 
-table Messages {
-  messages:[Message];
-  time:Message;
+//May be changed
+namespace AgentFlatbuf;
+
+union Type {Vector, Quaternion, Orientation}
+
+
+table State {
+  time:double;
+
+  chassis:Orientation;
+
+  Wheel0:Orientation;
+  Wheel1:Orientation;
+  Wheel2:Orientation;
+  Wheel3:Orientation;
 }
 
-table Message {
-  message:Type;
-  id:string;
+table Orientation {
+  pos:Vector;
+  rot:Quaternion;
 }
 
 table Vector {
@@ -18,13 +28,9 @@ table Vector {
   z:double;
 }
 
-table VehiclePosition {
-  rank:int;
-  position:Vector;
-
-}
-
-table Update {
-  rank:int;
-  posUpdate:VehiclePosition;
+table Quaternion {
+  e0:double;
+  e1:double;
+  e2:double;
+  e3:double;
 }
