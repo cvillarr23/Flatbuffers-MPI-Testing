@@ -167,7 +167,7 @@ inline flatbuffers::Offset<State> CreateState(
   flatbuffers::Offset<State> ret = builder_.Finish();
   _fbb.Finish(ret);
   uint8_t *buf = _fbb.GetBufferPointer();
-  std::cout << _fbb.GetSize() << std::endl;
+  // std::cout << _fbb.GetSize() << "asdas" << std::endl;
   return ret;
 }
 

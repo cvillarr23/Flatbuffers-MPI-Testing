@@ -3,6 +3,13 @@
 
 #define HEARTBEAT 5.0
 
+uint32_t getSize(flatbuffers::Offset<AgentFlatbuf::State> buf, flatbuffers::FlatBufferBuilder &_fbb) {
+  _fbb.Finish(buf);
+  _fbb.GetBufferPointer();
+  uint32_t size = _fbb.GetSize();
+  return size;
+}
+
 int main(int argc, char* argv[]) {
   flatbuffers::FlatBufferBuilder _fbb;
 
@@ -18,7 +25,7 @@ int main(int argc, char* argv[]) {
   flatbuffers::Offset<AgentFlatbuf::State> state = AgentFlatbuf::CreateState(_fbb, 2.1, ori, ori, ori, ori, ori);
 
   // AgentFlatbuf::StateBuilder builder_(_fbb);
-  // std::cout << builder_.getSize() << std::endl;
+  // std::cout << getSize(state, _fbb) << std::endl;
   //size is 160
 
   return 0;
